@@ -8,12 +8,18 @@
 
 body{
     font-family: 'Concert One', cursive;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #11172b;
 }
 
 
 .card{
-    width: 150px;
-    height: 150px; 
+    width: 130px;
+    height: 130px; 
     position: relative;
     backface-visibility: hidden;
     transform-style: preserve-3d; /*Transformar em 3D apra que o backface visibily funcione*/
@@ -60,6 +66,7 @@ body{
     font-size: 50px;
     flex-direction: column;
     top: 0;
+    visibility: hidden;
 }
 
 #restart{
@@ -69,4 +76,25 @@ body{
     border: none;
     border-radius: 10px;
     margin-top: 10px;
+}
+
+#gameBoard {
+    max-width: 700px;
+    /**usando display: grid */
+    display: grid;
+     /**
+    agora definimos o template do grid, onde 
+     a primeira conf são as linha depois as colunas */
+    grid-template: 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+@media  screen and (max-width: 1537px) {
+    #gameBoard {
+        max-height: 100vh;
+        max-width: 100%;
+        grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr
+      }
 }
