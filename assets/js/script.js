@@ -11,8 +11,9 @@ const ICON = "icon";
  }
 
  function initializeCards (cards){
+    
     let gameBoard = document.getElementById("gameBoard");
-
+        gameBoard.innerHTML = '';
         game.cards.forEach (card => {
 
         let cardElement = document.createElement('div');
@@ -102,7 +103,7 @@ function flipCard() {
           //verificando se é deu fim de jogo
           if (game.checkGameOver()) {
             let gameOverlayer = document.getElementById("gameOver");
-            gameOverlayer.style.display = "flex";
+            gameOverlayer.style.display = 'flex';
           }
         } else {
           /** caso não, pegamos os id das cartas que estão flipada e
@@ -121,6 +122,12 @@ function flipCard() {
       }
     }
   }
+
+function restart () {
+    startGame()
+    let gameOverlayer = document.getElementById("gameOver");
+    gameOverlayer.style.display = 'none';
+}
 
 
 
